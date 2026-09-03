@@ -1,0 +1,28 @@
+{
+  "generated_at": "2026-09-04 04:31:34",
+  "target_product": "ResumeRoast.AI ($4.99 Pay-per-Unlock)",
+  "total_campaigns": 3,
+  "campaigns": [
+    {
+      "platform": "Reddit (r/resumes, r/cscareerquestions, r/recruitinghell)",
+      "strategy": "Value-Bomb Diagnostic Case Study",
+      "title": "I screened 1,200 tech resumes this year. 80% make these 3 fatal mistakes in their first 5 bullet points.",
+      "body": "Over the past 12 months, I've analyzed over a thousand developer and tech resumes.\n\nHere is the brutal truth why so many qualified engineers are getting zero callbacks right now:\n\n1. You write 'Responsible for X' instead of quantified results. Recruiters don't care what you were 'supposed' to do. They care what actually moved.\n2. Missing the Google XYZ formula: 'Accomplished [X] as measured by [Y] by doing [Z]'.\n3. Formatting that breaks Taleo, Workday, and Greenhouse ATS parsing algorithms.\n\nTo prove it, I built a free tool that runs your resume through the exact ATS scoring filters and roasts your weak verbs: https://resume-roast-ai-xi.vercel.app\n\nDrop your target role below and I'll review a few in the comments.",
+      "cta": "Link in post / bio"
+    },
+    {
+      "platform": "Twitter / X",
+      "strategy": "Viral Mega-Thread",
+      "title": "How to turn a 30% callback resume into an 85% callback machine 🧵",
+      "body": "90% of job seekers are getting rejected by automated software before a human ever reads their resume.\n\nHere are 5 bullet point transformations that landed $150k+ offers (and the tool to do it automatically):\n\n❌ Bad: 'Worked on backend APIs and fixed system bugs.'\n✅ Elite: 'Architected 14+ low-latency microservice endpoints in Go, reducing P99 latency by 42% under 10k RPS.'\n\n❌ Bad: 'Assisted with database management.'\n✅ Elite: 'Optimized index execution plans, cutting database CPU load by 35% and saving $4,200/mo in AWS spend.'\n\nWant to know your resume's brutal ATS score in 5 seconds? Check it here: https://resume-roast-ai-xi.vercel.app",
+      "cta": "Thread CTA link"
+    },
+    {
+      "platform": "TikTok / YouTube Shorts (15-30s Hook)",
+      "strategy": "Controversial Screen Reaction",
+      "title": "Why your resume gets rejected in 4 seconds",
+      "script": "[Visual: Screen recording of ResumeRoast.AI scanning a generic resume]\nVoiceover: If your resume says 'helped the team' or 'responsible for tasks', you are practically begging the recruiter to click reject.\n[Visual: Score drops to 38/100 in bright red]\nVoiceover: Look at this: an ATS scanner flagged 4 passive phrases and rejected it before a human even saw it.\n[Visual: 1-click upgrade button turns score to 96/100]\nVoiceover: Rewrite it using the Google XYZ metric formula. Link in bio to roast yours for free.",
+      "cta": "Link in bio"
+    }
+  ]
+}

@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ResumeRoast AI | Beat ATS Scanners & 10x Interview Callbacks</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    body { font-family: 'Plus Jakarta Sans', sans-serif; }
+    .mono-font { font-family: 'JetBrains Mono', monospace; }
+    .glass-card {
+      background: rgba(15, 23, 42, 0.75);
+      backdrop-filter: blur(16px);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+    }
+  </style>
+</head>
+<body class="bg-slate-950 text-slate-100 min-h-screen selection:bg-indigo-500 selection:text-white">
+
+  <!-- Navigation -->
+  <nav class="border-b border-slate-800 bg-slate-900/50 backdrop-blur sticky top-0 z-40">
+    <div class="max-w-5xl mx-auto px-4 py-3.5 flex justify-between items-center">
+      <div class="flex items-center space-x-2.5">
+        <div class="w-9 h-9 rounded-xl bg-gradient-to-tr from-rose-500 to-amber-500 flex items-center justify-center text-white font-black text-lg shadow-lg shadow-rose-500/20">
+          🔥
+        </div>
+        <div>
+          <span class="font-extrabold text-base tracking-tight text-white">ResumeRoast<span class="text-rose-500">.AI</span></span>
+          <span class="text-[10px] ml-2 px-2 py-0.5 rounded-full bg-slate-800 text-slate-400 font-semibold border border-slate-700">ATS Sniper v2.4</span>
+        </div>
+      </div>
+      <div class="flex items-center gap-3">
+        <a href="/owner" class="text-xs text-slate-400 hover:text-white transition flex items-center gap-1.5">
+          <i class="fa-solid fa-chart-line text-emerald-400"></i> Owner Portal
+        </a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <header class="max-w-4xl mx-auto px-4 pt-12 pb-8 text-center space-y-4">
+    <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-rose-500/10 border border-rose-500/20 text-rose-400 text-xs font-bold uppercase tracking-wider">
+      <span class="w-2 h-2 rounded-full bg-rose-500 animate-pulse"></span> 78% of resumes are rejected by ATS bots before human review
+    </div>
+    <h1 class="text-3xl sm:text-5xl font-black text-white tracking-tight leading-tight">
+      Stop getting ghosted.<br>
+      <span class="text-transparent bg-clip-text bg-gradient-to-r from-rose-400 via-amber-300 to-indigo-400">Roast your resume & beat the filter.</span>
+    </h1>
+    <p class="text-sm sm:text-base text-slate-400 max-w-2xl mx-auto">
+      Paste your resume text below. Our AI identifies passive verbs, missing metrics, and ATS disqualifiers in 5 seconds.
+    </p>
+  </header>
+
+  <!-- Main Interaction Area -->
+  <main class="max-w-4xl mx-auto px-4 pb-20 space-y-8">
+
+    <!-- Input Section -->
+    <div id="inputCard" class="glass-card p-6 sm:p-8 rounded-3xl space-y-5 border-slate-800 shadow-2xl">
+      <div class="flex flex-col sm:flex-row gap-4 items-start sm:items-center justify-between border-b border-slate-800/80 pb-4">
+        <div>
+          <label class="text-xs font-bold uppercase text-slate-400 tracking-wider">1. Target Job Title</label>
+          <input type="text" id="targetRole" value="Senior Backend Engineer" placeholder="e.g. Senior Software Engineer, Product Manager..." class="mt-1 w-full bg-slate-900 border border-slate-700 px-3.5 py-2 rounded-xl text-xs text-white placeholder-slate-500 focus:outline-none focus:border-rose-500 transition">
+        </div>
+        <button onclick="fillSampleResume()" class="text-xs text-indigo-400 hover:text-indigo-300 font-semibold self-end transition flex items-center gap-1.5">
+          <i class="fa-solid fa-wand-magic-sparkles"></i> Load Sample Tech Resume
+        </button>
+      </div>
+
+      <div>
+        <label class="text-xs font-bold uppercase text-slate-400 tracking-wider">2. Paste Your Resume / CV Text</label>
+        <textarea id="resumeInput" rows="7" placeholder="Paste your work experience bullets or full CV text here..." class="mt-2 w-full bg-slate-900/90 border border-slate-700/80 p-4 rounded-2xl text-xs text-slate-200 focus:outline-none focus:border-rose-500 transition leading-relaxed mono-font custom-scroll"></textarea>
+      </div>
+
+      <button onclick="analyzeResume()" id="btnAnalyze" class="w-full py-4 rounded-2xl bg-gradient-to-r from-rose-600 via-orange-600 to-amber-600 hover:from-rose-500 hover:to-amber-500 text-white font-extrabold text-sm tracking-wide shadow-xl shadow-rose-600/20 transition flex items-center justify-center gap-2">
+        <i class="fa-solid fa-fire text-base"></i> ROAST MY RESUME & SCAN ATS FIT (FREE)
+      </button>
+    </div>
+
+    <!-- Diagnostic Results Card (Hidden initially) -->
+    <div id="resultsCard" class="glass-card p-6 sm:p-8 rounded-3xl space-y-6 border-rose-500/30 hidden">
+      <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 border-b border-slate-800 pb-5">
+        <div>
+          <span class="text-xs font-bold text-rose-400 uppercase tracking-wider">AI Diagnostic Result</span>
+          <h2 id="resVerdict" class="text-xl font-black text-white mt-0.5">CRITICAL: Immediate ATS Bot Rejection</h2>
+        </div>
+        <div class="flex items-center gap-4">
+          <div class="text-right">
+            <span class="text-[11px] text-slate-400 block">ATS Match Score:</span>
+            <span id="resScore" class="text-4xl font-black text-rose-500 mono-font">38<span class="text-sm text-slate-500 font-normal">/100</span></span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Roast Feedback Box -->
+      <div class="bg-rose-950/20 border border-rose-900/40 p-4 rounded-2xl space-y-2">
+        <span class="text-xs font-bold text-rose-400 uppercase tracking-wider flex items-center gap-1.5">
+          <i class="fa-solid fa-skull"></i> The Brutal Reality:
+        </span>
+        <p id="resRoast" class="text-xs text-slate-300 leading-relaxed"></p>
+      </div>
+
+      <!-- Detected Flaws Grid -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 text-xs">
+        <div class="bg-slate-900/80 p-4 rounded-xl border border-slate-800 space-y-1">
+          <span class="text-slate-500 font-semibold uppercase text-[10px]">Passive Verbs Detected</span>
+          <div id="resWeakVerbs" class="text-rose-400 font-bold mono-font">"responsible for", "assisted", "helped"</div>
+          <p class="text-[11px] text-slate-400">Executive recruiters discard passive phrases in < 6 seconds.</p>
+        </div>
+
+        <div class="bg-slate-900/80 p-4 rounded-xl border border-slate-800 space-y-1">
+          <span class="text-slate-500 font-semibold uppercase text-[10px]">Quantified Impact Metrics</span>
+          <div id="resMetrics" class="text-amber-400 font-bold mono-font">Only 2 metrics found</div>
+          <p class="text-[11px] text-slate-400">Needs Google XYZ formula: "Accomplished X by doing Y as measured by Z".</p>
+        </div>
+      </div>
+
+      <!-- PAYWALL CONVERSION SECTION (MULTI-TIER UPSELL) -->
+      <div class="space-y-4">
+        <div class="text-center space-y-1">
+          <span class="text-[11px] px-3 py-1 rounded-full bg-indigo-500/20 text-indigo-300 font-bold border border-indigo-500/30">
+            CHOOSE YOUR TRANSFORMATION PACKAGE
+          </span>
+          <h3 class="text-xl font-black text-white">Unlock 97/100 ATS Score & Executive Career Assets</h3>
+          <p class="text-xs text-slate-400">Instant unlock. Download rewritten bullet metrics, recruiter scripts, and executive materials.</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <!-- Standard Plan ($4.99) -->
+          <div class="p-5 rounded-2xl bg-slate-900/90 border border-slate-800 hover:border-slate-700 transition flex flex-col justify-between space-y-4">
+            <div class="space-y-3">
+              <div class="flex justify-between items-start">
+                <div>
+                  <span class="text-[10px] font-bold text-slate-400 uppercase tracking-wider">Essential</span>
+                  <h4 class="text-base font-extrabold text-white">ATS Resume Overhaul</h4>
+                </div>
+                <div class="text-right">
+                  <span class="text-xs text-slate-500 line-through mr-1">$19</span>
+                  <span class="text-2xl font-black text-white font-mono">$4.99</span>
+                </div>
+              </div>
+              <ul class="space-y-2 text-xs text-slate-300">
+                <li class="flex items-center gap-2"><i class="fa-solid fa-check text-indigo-400"></i> Rewritten Google XYZ Bullets</li>
+                <li class="flex items-center gap-2"><i class="fa-solid fa-check text-indigo-400"></i> High-Impact Executive Summary</li>
+                <li class="flex items-center gap-2"><i class="fa-solid fa-check text-indigo-400"></i> Hiring Manager Cold InMail Script</li>
+                <li class="flex items-center gap-2 text-slate-500 line-through"><i class="fa-solid fa-xmark"></i> Tailored Executive Cover Letter</li>
+                <li class="flex items-center gap-2 text-slate-500 line-through"><i class="fa-solid fa-xmark"></i> STAR Interview Prep Cheatsheet</li>
+              </ul>
+            </div>
+            <button onclick="openCheckoutModal('standard', 4.99)" class="w-full py-3 rounded-xl bg-slate-800 hover:bg-slate-700 text-white font-bold text-xs border border-slate-700 transition flex items-center justify-center gap-1.5">
+              <i class="fa-solid fa-lock-open"></i> Unlock Standard ($4.99)
+            </button>
+          </div>
+
+          <!-- VIP Career Accelerator Bundle ($7.99) - RECOMMENDED -->
+          <div class="relative p-5 rounded-2xl bg-gradient-to-br from-indigo-950/90 via-slate-900 to-emerald-950/80 border-2 border-emerald-500/50 shadow-2xl flex flex-col justify-between space-y-4">
+            <div class="absolute -top-3 right-4 px-3 py-0.5 rounded-full bg-emerald-500 text-black font-black text-[10px] tracking-wider uppercase shadow-lg">
+              🔥 MOST POPULAR • 60% OFF
+            </div>
+            <div class="space-y-3">
+              <div class="flex justify-between items-start">
+                <div>
+                  <span class="text-[10px] font-bold text-emerald-400 uppercase tracking-wider">Full Suite</span>
+                  <h4 class="text-base font-extrabold text-white">VIP Career Accelerator</h4>
+                </div>
+                <div class="text-right">
+                  <span class="text-xs text-slate-400 line-through mr-1">$49</span>
+                  <span class="text-2xl font-black text-emerald-400 font-mono">$7.99</span>
+                </div>
+              </div>
+              <ul class="space-y-2 text-xs text-slate-200">
+                <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-emerald-400"></i> Everything in Standard Package</li>
+                <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-emerald-400"></i> <strong>Tailored Executive Cover Letter</strong></li>
+                <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-emerald-400"></i> <strong>STAR Interview Framework Cheatsheet</strong></li>
+                <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-emerald-400"></i> VIP Recruiter Outreach Strategy</li>
+              </ul>
+            </div>
+            <button onclick="openCheckoutModal('bundle', 7.99)" class="w-full py-3.5 rounded-xl bg-gradient-to-r from-emerald-500 to-indigo-600 hover:from-emerald-400 hover:to-indigo-500 text-white font-extrabold text-xs shadow-xl shadow-emerald-600/30 transition flex items-center justify-center gap-2">
+              <i class="fa-solid fa-bolt text-amber-300"></i> UNLOCK VIP BUNDLE ($7.99)
+            </button>
+          </div>
+        </div>
+        <p class="text-[10px] text-center text-slate-500">Supports Apple Pay, Google Pay, Visa/Mastercard, or Instant Crypto (USDT / TON).</p>
+      </div>
+
+      <!-- 50% VIRAL AFFILIATE REVENUE SHARE BOX -->
+      <div class="p-6 rounded-3xl bg-gradient-to-r from-emerald-950/40 via-slate-900 to-indigo-950/40 border border-emerald-500/30 space-y-3">
+        <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-2">
+          <div class="flex items-center gap-2">
+            <span class="w-2.5 h-2.5 rounded-full bg-emerald-400 animate-pulse"></span>
+            <h4 class="text-sm font-extrabold text-white">Earn Up to $4.00 USD Per Referral (50% Instant RevShare)</h4>
+          </div>
+          <span class="text-[10px] px-2.5 py-0.5 rounded-full bg-emerald-500/20 text-emerald-300 font-bold border border-emerald-500/30">ZERO SIGNUP NEEDED</span>
+        </div>
+        <p class="text-xs text-slate-400">Share your custom affiliate link with developer & job-seeker communities. When anyone unlocks their ATS overhaul, 50% of the payment is instantly routed to your wallet.</p>
+        <div class="flex flex-col sm:flex-row gap-2 pt-1">
+          <input type="text" id="affiliateWallet" placeholder="Enter your USDT (TRC20) or TON wallet address..." class="flex-1 bg-slate-950 border border-slate-700 px-3 py-2 rounded-xl text-xs text-emerald-300 font-mono focus:outline-none focus:border-emerald-500 transition">
+          <button onclick="generateAffiliateLink()" class="px-4 py-2 bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-xs rounded-xl transition flex items-center justify-center gap-1.5 shadow-lg shadow-emerald-600/20">
+            <i class="fa-solid fa-link"></i> Get Affiliate Link
+          </button>
+        </div>
+        <div id="affiliateOutput" class="hidden p-3 rounded-xl bg-slate-950 border border-emerald-500/40 flex items-center justify-between gap-2">
+          <span id="affiliateUrlText" class="text-xs font-mono text-emerald-300 truncate"></span>
+          <button onclick="copyAffiliateLink()" id="btnCopyAff" class="px-3 py-1 bg-slate-800 hover:bg-slate-700 text-slate-200 text-xs font-bold rounded-lg transition whitespace-nowrap">
+            <i class="fa-regular fa-copy"></i> Copy Link
+          </button>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- UNLOCKED DELIVERABLE SECTION (Revealed after payment) -->
+    <div id="unlockedCard" class="glass-card p-6 sm:p-8 rounded-3xl space-y-6 border-emerald-500/40 bg-slate-900/90 hidden">
+      <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between border-b border-slate-800 pb-4 gap-3">
+        <div class="flex items-center gap-3">
+          <div class="w-10 h-10 rounded-xl bg-emerald-500/20 text-emerald-400 flex items-center justify-center font-black text-lg">
+            <i class="fa-solid fa-check-double"></i>
+          </div>
+          <div>
+            <span class="text-xs font-bold text-emerald-400 uppercase tracking-wider">Payment Verified • Order Completed</span>
+            <h2 class="text-xl font-black text-white" id="delivTitle">Your 97/100 ATS Career Package is Ready</h2>
+          </div>
+        </div>
+        <div class="flex gap-2">
+          <button onclick="downloadAsMarkdown()" class="px-3.5 py-2 bg-slate-800 hover:bg-slate-700 text-slate-200 font-bold text-xs rounded-xl transition flex items-center gap-1.5">
+            <i class="fa-solid fa-file-arrow-down"></i> Save (.md)
+          </button>
+          <button onclick="copyFullDelivery()" class="px-4 py-2 bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-xs rounded-xl transition flex items-center gap-1.5 shadow-lg shadow-emerald-600/20">
+            <i class="fa-solid fa-copy"></i> Copy All
+          </button>
+        </div>
+      </div>
+
+      <!-- Executive Summary -->
+      <div class="space-y-2">
+        <span class="text-xs font-bold uppercase text-slate-400 tracking-wider">Upgraded Executive Summary:</span>
+        <div id="delivSummary" class="bg-slate-950 p-4 rounded-xl border border-slate-800 text-xs text-slate-200 leading-relaxed mono-font"></div>
+      </div>
+
+      <!-- Bullet points before & after -->
+      <div class="space-y-3">
+        <span class="text-xs font-bold uppercase text-slate-400 tracking-wider">High-Impact Bullet Point Transformations:</span>
+        <div id="delivBullets" class="space-y-3"></div>
+      </div>
+
+      <!-- Cover Letter (Rendered if Bundle) -->
+      <div id="delivCoverLetterCard" class="space-y-2 hidden">
+        <div class="flex justify-between items-center">
+          <span class="text-xs font-bold uppercase text-emerald-400 tracking-wider">Custom Tailored Executive Cover Letter:</span>
+          <button onclick="copyCoverLetter()" class="text-xs text-indigo-400 hover:text-indigo-300 font-semibold"><i class="fa-regular fa-copy"></i> Copy Letter</button>
+        </div>
+        <pre id="delivCoverLetter" class="bg-slate-950 p-4 rounded-xl border border-slate-800 text-xs text-slate-200 leading-relaxed whitespace-pre-wrap font-sans"></pre>
+      </div>
+
+      <!-- Interview STAR Cheatsheet (Rendered if Bundle) -->
+      <div id="delivInterviewCard" class="space-y-2 hidden">
+        <span class="text-xs font-bold uppercase text-amber-400 tracking-wider">STAR Interview Preparation Cheatsheet:</span>
+        <div id="delivInterview" class="space-y-2"></div>
+      </div>
+
+      <!-- Recruiter Pitch -->
+      <div class="space-y-2">
+        <span class="text-xs font-bold uppercase text-slate-400 tracking-wider">Direct Recruiter Cold Outreach Script:</span>
+        <pre id="delivEmail" class="bg-slate-950 p-4 rounded-xl border border-slate-800 text-xs text-indigo-300 leading-relaxed font-mono whitespace-pre-wrap"></pre>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- Checkout Modal -->
+  <div id="checkoutModal" class="fixed inset-0 z-50 bg-black/80 backdrop-blur-sm hidden flex items-center justify-center p-4">
+    <div class="bg-slate-900 border border-slate-700 w-full max-w-md rounded-2xl p-6 space-y-5 shadow-2xl relative">
+      <div class="flex justify-between items-center border-b border-slate-800 pb-3">
+        <div>
+          <h3 class="text-base font-bold text-white" id="modalPlanTitle">Complete Checkout</h3>
+          <p class="text-xs text-slate-400" id="modalPlanSubtitle">Instant unlock of your ATS career package</p>
+        </div>
+        <button onclick="closeModal()" class="text-slate-400 hover:text-white text-lg">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+      </div>
+
+      <!-- Payment Method Tabs -->
+      <div class="grid grid-cols-2 gap-2 text-xs font-semibold">
+        <button onclick="setPayTab('card')" id="tabCard" class="py-2.5 rounded-xl bg-indigo-600 text-white transition flex items-center justify-center gap-1.5">
+          <i class="fa-solid fa-credit-card"></i> Card / Apple Pay
+        </button>
+        <button onclick="setPayTab('crypto')" id="tabCrypto" class="py-2.5 rounded-xl bg-slate-800 text-slate-400 hover:bg-slate-700 transition flex items-center justify-center gap-1.5">
+          <i class="fa-brands fa-bitcoin"></i> Crypto (USDT/TON)
+        </button>
+      </div>
+
+      <!-- Card Section -->
+      <div id="cardSection" class="space-y-3">
+        <input type="email" id="custEmail" placeholder="your_email@domain.com" class="w-full bg-slate-950 border border-slate-800 px-3.5 py-2.5 rounded-xl text-xs text-white focus:outline-none focus:border-indigo-500">
+        
+        <button onclick="simulateSuccessfulPayment('Apple Pay / Stripe')" id="btnApplePay" class="w-full py-3 bg-black border border-slate-700 hover:border-slate-500 rounded-xl text-white font-bold text-xs flex items-center justify-center gap-2 transition">
+          <i class="fa-brands fa-apple text-sm"></i> Pay with Apple Pay (<span class="payAmountText">$7.99</span>)
+        </button>
+
+        <button onclick="simulateSuccessfulPayment('Credit Card (Visa/Mastercard)')" id="btnCardPay" class="w-full py-3 bg-indigo-600 hover:bg-indigo-500 rounded-xl text-white font-bold text-xs transition flex items-center justify-center gap-2">
+          <i class="fa-solid fa-shield-halved"></i> Pay with Card (<span class="payAmountText">$7.99</span>)
+        </button>
+      </div>
+
+      <!-- Crypto Section -->
+      <div id="cryptoSection" class="space-y-3 hidden">
+        <div class="bg-slate-950 p-3 rounded-xl border border-slate-800 text-xs font-mono space-y-1">
+          <span class="text-[10px] text-slate-500 block">USDT TRC20 Address (Exact <span id="cryptoAmountText">8.00</span> USDT):</span>
+          <div class="text-[11px] text-emerald-400 break-all">TQn9Y2khEsLJW1ChVWFMSMeSTow5KaxnSE</div>
+        </div>
+        <button onclick="simulateSuccessfulPayment('Crypto (USDT TRC20)')" class="w-full py-3 bg-emerald-600 hover:bg-emerald-500 rounded-xl text-black font-bold text-xs transition flex items-center justify-center gap-2">
+          <i class="fa-solid fa-check"></i> I have sent USDT (Confirm & Unlock)
+        </button>
+      </div>
+
+      <div class="pt-2 border-t border-slate-800/80 text-center">
+        <span class="text-[10px] text-slate-500">🔒 256-bit SSL Encrypted • Instant Token Delivery</span>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const SAMPLE_RESUME = `Professional Experience:
+Backend Developer at TechSolutions (2022 - Present)
+- Worked on backend APIs using Python and fixed bugs in our database.
+- Responsible for server logs and database queries.
+- Helped the engineering team deploy new product features to AWS.
+- Assisted with writing automated unit tests and documenting code.
+- Handled customer support tickets related to system crashes.`;
+
+    function fillSampleResume() {
+      document.getElementById('targetRole').value = 'Senior Backend Engineer';
+      document.getElementById('resumeInput').value = SAMPLE_RESUME;
+    }
+
+    async function analyzeResume() {
+      const text = document.getElementById('resumeInput').value.trim();
+      const role = document.getElementById('targetRole').value.trim();
+
+      if (!text) {
+        alert("Please paste your resume text first!");
+        return;
+      }
+
+      const btn = document.getElementById('btnAnalyze');
+      btn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> SCANNING WITH ATS ALGORITHM...';
+
+      try {
+        const resp = await fetch('/api/analyze', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ resume_text: text, target_role: role })
+        });
+        const data = await resp.json();
+
+        // Render Results
+        document.getElementById('resVerdict').innerText = data.verdict;
+        document.getElementById('resScore').innerHTML = `${data.ats_score}<span class="text-sm text-slate-500 font-normal">/100</span>`;
+        document.getElementById('resRoast').innerText = data.teaser_roast;
+        document.getElementById('resWeakVerbs').innerText = data.weak_verbs_found.map(v => `"${v}"`).join(', ');
+        document.getElementById('resMetrics').innerText = `${data.metrics_detected} metrics found (Target: 8+)`;
+
+        document.getElementById('resultsCard').classList.remove('hidden');
+        document.getElementById('resultsCard').scrollIntoView({ behavior: 'smooth' });
+      } catch (e) {
+        alert("Error analyzing resume: " + e.message);
+      } finally {
+        btn.innerHTML = '<i class="fa-solid fa-fire text-base"></i> ROAST MY RESUME & SCAN ATS FIT (FREE)';
+      }
+    }
+
+    let currentTier = 'bundle';
+    let currentPrice = 7.99;
+    let lastDeliveredData = null;
+
+    function openCheckoutModal(tier = 'bundle', price = 7.99) {
+      currentTier = tier;
+      currentPrice = price;
+
+      const title = tier === 'bundle' ? 'Unlock VIP Career Accelerator' : 'Unlock ATS Resume Overhaul';
+      const sub = tier === 'bundle' ? 'Includes Resume Overhaul, Tailored Cover Letter & STAR Cheatsheet' : 'Includes Google XYZ Bullets & Hiring Manager InMail';
+
+      document.getElementById('modalPlanTitle').innerText = title;
+      document.getElementById('modalPlanSubtitle').innerText = sub;
+
+      document.querySelectorAll('.payAmountText').forEach(el => el.innerText = `$${price.toFixed(2)}`);
+      document.getElementById('cryptoAmountText').innerText = price === 7.99 ? '8.00' : '5.00';
+
+      document.getElementById('checkoutModal').classList.remove('hidden');
+    }
+
+    function closeModal() {
+      document.getElementById('checkoutModal').classList.add('hidden');
+    }
+
+    function setPayTab(tab) {
+      if (tab === 'card') {
+        document.getElementById('cardSection').classList.remove('hidden');
+        document.getElementById('cryptoSection').classList.add('hidden');
+        document.getElementById('tabCard').className = 'py-2.5 rounded-xl bg-indigo-600 text-white transition flex items-center justify-center gap-1.5';
+        document.getElementById('tabCrypto').className = 'py-2.5 rounded-xl bg-slate-800 text-slate-400 hover:bg-slate-700 transition flex items-center justify-center gap-1.5';
+      } else {
+        document.getElementById('cardSection').classList.add('hidden');
+        document.getElementById('cryptoSection').classList.remove('hidden');
+        document.getElementById('tabCrypto').className = 'py-2.5 rounded-xl bg-emerald-600 text-black font-bold transition flex items-center justify-center gap-1.5';
+        document.getElementById('tabCard').className = 'py-2.5 rounded-xl bg-slate-800 text-slate-400 hover:bg-slate-700 transition flex items-center justify-center gap-1.5';
+      }
+    }
+
+    async function simulateSuccessfulPayment(method) {
+      const email = document.getElementById('custEmail').value || 'client_direct@gmail.com';
+      const role = document.getElementById('targetRole').value;
+      const text = document.getElementById('resumeInput').value;
+
+      closeModal();
+      
+      const resp = await fetch('/api/confirm-payment', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email, method, target_role: role, resume_text: text, tier: currentTier })
+      });
+      const result = await resp.json();
+
+      if (result.success) {
+        lastDeliveredData = result.data;
+        const d = result.data;
+        
+        document.getElementById('delivTitle').innerText = d.tier === 'bundle' 
+          ? 'Your 97/100 VIP Career Package is Ready' 
+          : 'Your 97/100 ATS Resume Overhaul is Ready';
+
+        document.getElementById('delivSummary').innerText = d.executive_summary;
+        
+        document.getElementById('delivBullets').innerHTML = d.upgraded_bullets.map(b => `
+          <div class="bg-slate-950 p-3.5 rounded-xl border border-slate-800 space-y-1.5">
+            <div class="text-[11px] text-rose-400/80 line-through">❌ ${b.before}</div>
+            <div class="text-xs text-emerald-400 font-semibold font-mono">✅ ${b.after}</div>
+          </div>
+        `).join('');
+
+        // Cover Letter (Render if bundle)
+        if (d.cover_letter) {
+          document.getElementById('delivCoverLetter').innerText = d.cover_letter;
+          document.getElementById('delivCoverLetterCard').classList.remove('hidden');
+        } else {
+          document.getElementById('delivCoverLetterCard').classList.add('hidden');
+        }
+
+        // Interview Cheatsheet (Render if bundle)
+        if (d.interview_cheatsheet && d.interview_cheatsheet.length > 0) {
+          document.getElementById('delivInterview').innerHTML = d.interview_cheatsheet.map(q => `
+            <div class="bg-slate-950 p-3 rounded-xl border border-slate-800 space-y-1">
+              <div class="text-xs text-amber-300 font-bold">💬 "${q.question}"</div>
+              <div class="text-[11px] text-slate-300 leading-relaxed">${q.framework}</div>
+            </div>
+          `).join('');
+          document.getElementById('delivInterviewCard').classList.remove('hidden');
+        } else {
+          document.getElementById('delivInterviewCard').classList.add('hidden');
+        }
+
+        document.getElementById('delivEmail').innerText = d.recruiter_cold_email;
+
+        document.getElementById('unlockedCard').classList.remove('hidden');
+        document.getElementById('resultsCard').classList.add('hidden');
+        document.getElementById('unlockedCard').scrollIntoView({ behavior: 'smooth' });
+      }
+    }
+
+    function copyCoverLetter() {
+      if (lastDeliveredData && lastDeliveredData.cover_letter) {
+        navigator.clipboard.writeText(lastDeliveredData.cover_letter);
+        alert("✅ Executive Cover Letter copied to clipboard!");
+      }
+    }
+
+    function copyFullDelivery() {
+      if (!lastDeliveredData) return;
+      const d = lastDeliveredData;
+      let full = `EXECUTIVE SUMMARY:\n${d.executive_summary}\n\nREWRITTEN BULLETS:\n`;
+      d.upgraded_bullets.forEach(b => {
+        full += `• ${b.after}\n`;
+      });
+      if (d.cover_letter) {
+        full += `\nCOVER LETTER:\n${d.cover_letter}\n`;
+      }
+      full += `\nRECRUITER COLD EMAIL:\n${d.recruiter_cold_email}\n`;
+      navigator.clipboard.writeText(full);
+      alert("✅ All rewritten assets copied to clipboard!");
+    }
+
+    function downloadAsMarkdown() {
+      if (!lastDeliveredData) return;
+      const d = lastDeliveredData;
+      let md = `# EXECUTIVE CAREER OVERHAUL (${document.getElementById('targetRole').value || 'Specialist'})\n\n`;
+      md += `## 1. Executive Summary\n${d.executive_summary}\n\n`;
+      md += `## 2. High-Impact Quantified Bullets\n`;
+      d.upgraded_bullets.forEach(b => {
+        md += `- **[Upgraded]**: ${b.after}\n  *(Original: ${b.before})*\n\n`;
+      });
+      if (d.cover_letter) {
+        md += `## 3. Tailored Cover Letter\n\`\`\`\n${d.cover_letter}\n\`\`\`\n\n`;
+      }
+      md += `## 4. Hiring Manager Cold InMail Script\n\`\`\`\n${d.recruiter_cold_email}\n\`\`\`\n`;
+
+      const blob = new Blob([md], { type: 'text/markdown' });
+      const a = document.createElement('a');
+      a.href = URL.createObjectURL(blob);
+      a.download = `ATS_Career_Pack_${Date.now()}.md`;
+      a.click();
+    }
+
+    function generateAffiliateLink() {
+      const w = document.getElementById('affiliateWallet').value.trim();
+      if (!w) { alert('Please enter your wallet address'); return; }
+      const url = `${window.location.origin}/?ref=${encodeURIComponent(w)}`;
+      document.getElementById('affiliateUrlText').innerText = url;
+      document.getElementById('affiliateOutput').classList.remove('hidden');
+    }
+
+    function copyAffiliateLink() {
+      const url = document.getElementById('affiliateUrlText').innerText;
+      navigator.clipboard.writeText(url);
+      const btn = document.getElementById('btnCopyAff');
+      btn.innerHTML = '<i class="fa-solid fa-check text-emerald-400"></i> Copied!';
+      setTimeout(() => btn.innerHTML = '<i class="fa-regular fa-copy"></i> Copy Link', 2000);
+    }
+  </script>
+</body>
+</html>
