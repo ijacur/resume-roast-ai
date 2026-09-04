@@ -321,10 +321,14 @@
       <div id="cryptoSection" class="space-y-3 hidden">
         <div class="bg-slate-950 p-3 rounded-xl border border-slate-800 text-xs font-mono space-y-1">
           <span class="text-[10px] text-slate-500 block">USDT TRC20 Address (Exact <span id="cryptoAmountText">8.00</span> USDT):</span>
-          <div class="text-[11px] text-emerald-400 break-all">TQn9Y2khEsLJW1ChVWFMSMeSTow5KaxnSE</div>
+          <div class="text-[11px] text-emerald-400 break-all select-all font-bold">TQn9Y2khEsLJW1ChVWFMSMeSTow5KaxnSE</div>
         </div>
-        <button onclick="simulateSuccessfulPayment('Crypto (USDT TRC20)')" class="w-full py-3 bg-emerald-600 hover:bg-emerald-500 rounded-xl text-black font-bold text-xs transition flex items-center justify-center gap-2">
-          <i class="fa-solid fa-check"></i> I have sent USDT (Confirm & Unlock)
+        <div class="bg-slate-950 p-3 rounded-xl border border-slate-800 text-xs font-mono space-y-1">
+          <span class="text-[10px] text-slate-500 block">TON (Telegram Wallet / Tonkeeper) Address:</span>
+          <div class="text-[11px] text-sky-400 break-all select-all font-bold">EQCD39VS5jcptHL8vMjEXrzGaRcCVYto7HUn4bpAOg8xqB2N</div>
+        </div>
+        <button onclick="simulateSuccessfulPayment('Crypto (USDT / TON)')" class="w-full py-3 bg-gradient-to-r from-emerald-500 to-sky-500 hover:from-emerald-400 hover:to-sky-400 rounded-xl text-black font-extrabold text-xs transition flex items-center justify-center gap-2">
+          <i class="fa-solid fa-check"></i> I have sent Crypto (Confirm & Unlock)
         </button>
       </div>
 
