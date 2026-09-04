@@ -1,5 +1,6 @@
 {
   "crypto_usdt_address": "TQn9Y2khEsLJW1ChVWFMSMeSTow5KaxnSE (TRC20)",
   "crypto_ton_address": "EQCD39VS5jcptHL8vMjEXrzGaRcCVYto7HUn4bpAOg8xqB2N",
+  "payout_email": "jasurshukurov701@gmail.com",
   "stripe_checkout_url": ""
 }

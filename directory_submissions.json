@@ -1,0 +1,125 @@
+{
+  "metadata": {
+    "product_name": "ResumeRoast.AI",
+    "website_url": "https://resume-roast-ai-xi.vercel.app",
+    "pricing_model": "Freemium / Pay-Per-Unlock ($4.99)",
+    "tagline": "Beat ATS filters and 10x interview callbacks with instant AI resume roasting",
+    "short_description": "ResumeRoast.AI is a privacy-first, client-side ATS diagnostic scanner that parses resumes locally with pdf.js, computes a 0-100 impact score, and rewrites passive bullets into executive-grade Google XYZ metrics in seconds.",
+    "key_features": [
+      "Instant in-browser PDF/DOCX parsing (zero server latency)",
+      "Brutal 0-100 ATS scoring across impact, brevity, and keyword depth",
+      "Google XYZ bullet rewriter transforming passive verbs into quantified wins",
+      "Programmatic SEO funnels tailored for Software Engineers, PMs, and Data Analysts",
+      "Frictionless checkout supporting Apple Pay, Google Pay, Cards, TRC20 USDT, and TON"
+    ],
+    "tags": [
+      "AI",
+      "Career",
+      "Resume",
+      "Job Search",
+      "Productivity",
+      "SaaS",
+      "ATS Scanner"
+    ],
+    "founder_telegram": "@jasurshukurov",
+    "contact_email": "jasur@resumeroast.ai"
+  },
+  "directories": [
+    {
+      "name": "Product Hunt",
+      "category": "Top Tier Launch",
+      "url": "https://www.producthunt.com/posts/new",
+      "submission_type": "1-Click Web Submission",
+      "traffic_potential": "High (5,000+ views)",
+      "dofollow_backlink": true
+    },
+    {
+      "name": "Toolify.ai",
+      "category": "AI Directory (Top 1)",
+      "url": "https://www.toolify.ai/submit",
+      "submission_type": "Direct Submit",
+      "traffic_potential": "High (2.4M monthly visits)",
+      "dofollow_backlink": true
+    },
+    {
+      "name": "Futurepedia",
+      "category": "AI Aggregator",
+      "url": "https://www.futurepedia.io/submit-tool",
+      "submission_type": "Form Submit",
+      "traffic_potential": "High (1.8M monthly visits)",
+      "dofollow_backlink": true
+    },
+    {
+      "name": "There's An AI For That (TAAFT)",
+      "category": "AI Search Engine",
+      "url": "https://theresanaiforthat.com/submit/",
+      "submission_type": "Form Submit",
+      "traffic_potential": "Very High (3.1M monthly visits)",
+      "dofollow_backlink": true
+    },
+    {
+      "name": "Microlaunch",
+      "category": "Micro-SaaS Hub",
+      "url": "https://microlaunch.net/submit",
+      "submission_type": "Instant Listing",
+      "traffic_potential": "Medium (Indie Buyers)",
+      "dofollow_backlink": true
+    },
+    {
+      "name": "TopAI.tools",
+      "category": "AI Directory",
+      "url": "https://topai.tools/submit",
+      "submission_type": "Direct Submit",
+      "traffic_potential": "Medium (500k monthly visits)",
+      "dofollow_backlink": true
+    },
+    {
+      "name": "AlternativeTo",
+      "category": "Software Alternatives",
+      "url": "https://alternativeto.net/software/add/",
+      "submission_type": "Competitor Alternative Listing",
+      "traffic_potential": "Very High (High Intent)",
+      "dofollow_backlink": true
+    },
+    {
+      "name": "BetaList",
+      "category": "Startup Discovery",
+      "url": "https://betalist.com/submit",
+      "submission_type": "Curated Launch",
+      "traffic_potential": "High (Early Adopters)",
+      "dofollow_backlink": true
+    },
+    {
+      "name": "Dang.ai",
+      "category": "AI Tools Index",
+      "url": "https://dang.ai/submit",
+      "submission_type": "Instant Submit",
+      "traffic_potential": "Medium (300k visits)",
+      "dofollow_backlink": true
+    },
+    {
+      "name": "Insidr.ai",
+      "category": "AI Reviews & Tools",
+      "url": "https://www.insidr.ai/submit-your-tool/",
+      "submission_type": "Directory Review",
+      "traffic_potential": "Medium (SEO Backlinks)",
+      "dofollow_backlink": true
+    },
+    {
+      "name": "StartupStash",
+      "category": "SaaS Directory",
+      "url": "https://startupstash.com/submit/",
+      "submission_type": "Curated SaaS Index",
+      "traffic_potential": "Medium (Founders & Tech)",
+      "dofollow_backlink": true
+    },
+    {
+      "name": "Launching Next",
+      "category": "Trending Startups",
+      "url": "https://www.launchingnext.com/submit/",
+      "submission_type": "Free Listing",
+      "traffic_potential": "Medium (150k visits)",
+      "dofollow_backlink": true
+    }
+  ]
+}
