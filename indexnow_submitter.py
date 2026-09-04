@@ -19,7 +19,11 @@ URL_LIST = [
     f"https://{HOST}/roles/software-engineer.html",
     f"https://{HOST}/roles/product-manager.html",
     f"https://{HOST}/roles/data-scientist.html",
-    f"https://{HOST}/roles/devops-cloud-architect.html"
+    f"https://{HOST}/roles/devops-cloud-architect.html",
+    f"https://{HOST}/roles/cybersecurity-analyst.html",
+    f"https://{HOST}/roles/blockchain-web3-developer.html",
+    f"https://{HOST}/roles/machine-learning-engineer.html",
+    f"https://{HOST}/roles/fullstack-react-developer.html"
 ]
 
 payload = {

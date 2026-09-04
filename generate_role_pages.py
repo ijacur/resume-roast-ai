@@ -77,6 +77,70 @@ ROLE_DATA = [
             "- Did system monitoring using Grafana and handled on-call alerts.\n"
             "- Assisted with security patching and cloud backup configurations."
         )
+    },
+    {
+        "slug": "cybersecurity-analyst",
+        "title": "Cybersecurity & InfoSec Resume Roast | Beat Enterprise ATS",
+        "h1": "Cybersecurity Resumes Get Flagged for Lack of Incident Metrics.",
+        "sub": "Enterprise security screeners reject SecOps candidates who don't list MTTR reduction, zero breach records, and vulnerability remediation volume.",
+        "target_role": "Senior Cybersecurity / SecOps Analyst",
+        "keywords": ["SIEM / SOC", "Vulnerability Management", "SOC2 / ISO 27001", "Threat Hunting", "MTTR Reduction", "Zero-Trust", "Penetration Testing"],
+        "sample_cv": (
+            "Cybersecurity Analyst at SecureSphere (2022-2025)\n"
+            "- Responsible for monitoring SOC alerts and firewall logs.\n"
+            "- Assisted senior team in incident response and threat analysis.\n"
+            "- Worked on vulnerability scanning with Nessus and Qualys.\n"
+            "- Helped prepare documentation for annual compliance audits.\n"
+            "- Attended daily standups and handled user access requests."
+        )
+    },
+    {
+        "slug": "blockchain-web3-developer",
+        "title": "Blockchain & Web3 Developer Resume Roast | Smart Contract ATS",
+        "h1": "Web3 Resumes Lack Provable TVL & Gas Optimization Metrics.",
+        "sub": "Crypto protocols reject Solidity engineers who don't prove zero-hack contract deployments and gas-optimized EVM bytecode.",
+        "target_role": "Senior Smart Contract / Web3 Engineer",
+        "keywords": ["Solidity", "EVM Assembly (Yul)", "DeFi Protocols", "Reentrancy Protection", "Gas Optimization", "Foundry / Hardhat", "TVL Secured"],
+        "sample_cv": (
+            "Smart Contract Developer at DecentralLabs (2022-2025)\n"
+            "- Responsible for writing Solidity contracts for token staking.\n"
+            "- Helped test contracts using Hardhat and TypeScript.\n"
+            "- Worked on frontend integration with Ethers.js and Wagmi.\n"
+            "- Assisted with smart contract security audit preparation.\n"
+            "- Handled bug fixes for decentralized exchange interface."
+        )
+    },
+    {
+        "slug": "machine-learning-engineer",
+        "title": "AI & Machine Learning Engineer Resume Roast | MLOps ATS",
+        "h1": "AI/ML Resumes Are Getting Auto-Rejected for Lacking Latency SLAs.",
+        "sub": "Tech giants reject AI engineers who only list model training without proving sub-50ms inference latency, quantization, and GPU cost cuts.",
+        "target_role": "Senior MLOps & LLM Systems Engineer",
+        "keywords": ["vLLM / TensorRT", "LoRA Fine-Tuning", "P95 Inference Latency", "Model Quantization", "CUDA / PyTorch", "RAG Pipelines", "GPU Optimization"],
+        "sample_cv": (
+            "Machine Learning Engineer at NeuralCore (2022-2025)\n"
+            "- Responsible for fine-tuning open-source LLMs on proprietary data.\n"
+            "- Helped deploy models to cloud servers using Docker.\n"
+            "- Worked on prompt engineering and RAG pipeline setup.\n"
+            "- Assisted with data preprocessing and vector embeddings.\n"
+            "- Monitored model outputs and evaluated response quality."
+        )
+    },
+    {
+        "slug": "fullstack-react-developer",
+        "title": "Fullstack React & Next.js Developer Resume Roast | ATS Scanner",
+        "h1": "Fullstack Resumes List 'HTML/CSS' Instead of Core Web Vitals.",
+        "sub": "Hiring managers instantly skip developers who list generic tech stacks without proving Lighthouse 95+ performance and conversion uplifts.",
+        "target_role": "Senior Fullstack Engineer (React / Next.js / Node)",
+        "keywords": ["Next.js App Router", "Server Components (RSC)", "Lighthouse 95+", "GraphQL / tRPC", "PostgreSQL / Prisma", "Tailwind CSS", "Core Web Vitals"],
+        "sample_cv": (
+            "Fullstack Developer at VelocityApps (2022-2025)\n"
+            "- Responsible for building UI components in React and Tailwind.\n"
+            "- Helped backend engineers develop REST APIs in Express.\n"
+            "- Worked on responsive mobile layouts and fixed styling bugs.\n"
+            "- Assisted with database migrations and Prisma schema updates.\n"
+            "- Attended daily agile standups and completed Jira tickets."
+        )
     }
 ]
 
