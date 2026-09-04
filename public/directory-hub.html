@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+  <meta charset="UTF-8">
+  <title>🚀 AI Directory Syndication Launcher | ResumeRoast.AI</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+  <style>body { font-family: 'Plus Jakarta Sans', sans-serif; }</style>
+</head>
+<body class="bg-slate-950 text-slate-100 min-h-screen p-6">
+  <div class="max-w-5xl mx-auto space-y-6">
+    <div class="flex justify-between items-center border-b border-slate-800 pb-4">
+      <div>
+        <h1 class="text-2xl font-black text-white flex items-center gap-2">
+          🚀 AI Directory Syndication Hub <span class="text-xs px-2.5 py-0.5 rounded-full bg-emerald-500/20 text-emerald-400 font-bold border border-emerald-500/30">12 DIRECTORIES READY</span>
+        </h1>
+        <p class="text-xs text-slate-400 mt-1">Submit ResumeRoast.AI to top AI search engines and aggregator platforms for instant organic backlinks and user signups.</p>
+      </div>
+      <button onclick="copyAllMetadata()" class="px-4 py-2 bg-gradient-to-r from-emerald-600 to-teal-600 hover:from-emerald-500 hover:to-teal-500 text-white rounded-xl text-xs font-bold transition flex items-center gap-1.5 shadow-lg shadow-emerald-600/20">
+        <i class="fa-solid fa-copy"></i> Copy Full Submission Pack
+      </button>
+    </div>
+
+    <!-- Metadata Quick-Copy Cards -->
+    <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 bg-slate-900/60 p-4 rounded-2xl border border-slate-800">
+      <div>
+        <span class="text-[10px] font-bold text-slate-400 uppercase tracking-wider">Product Name</span>
+        <div class="flex items-center justify-between mt-1 bg-slate-950 p-2 rounded-lg border border-slate-800">
+          <span class="text-xs font-mono text-white">ResumeRoast.AI</span>
+          <button onclick="copyText('ResumeRoast.AI')" class="text-slate-400 hover:text-emerald-400 text-xs"><i class="fa-solid fa-copy"></i></button>
+        </div>
+      </div>
+      <div class="sm:col-span-2">
+        <span class="text-[10px] font-bold text-slate-400 uppercase tracking-wider">Tagline</span>
+        <div class="flex items-center justify-between mt-1 bg-slate-950 p-2 rounded-lg border border-slate-800">
+          <span class="text-xs font-mono text-emerald-300 truncate mr-2">Beat ATS filters and 10x interview callbacks with instant AI resume roasting</span>
+          <button onclick="copyText('Beat ATS filters and 10x interview callbacks with instant AI resume roasting')" class="text-slate-400 hover:text-emerald-400 text-xs shrink-0"><i class="fa-solid fa-copy"></i></button>
+        </div>
+      </div>
+      <div class="sm:col-span-3">
+        <span class="text-[10px] font-bold text-slate-400 uppercase tracking-wider">Description (Optimized for AI Directory Approval)</span>
+        <div class="flex items-start justify-between mt-1 bg-slate-950 p-2.5 rounded-lg border border-slate-800">
+          <p class="text-xs text-slate-300 mr-2">ResumeRoast.AI is a privacy-first, client-side ATS diagnostic scanner that parses resumes locally with pdf.js, computes a 0-100 impact score, and rewrites passive bullets into executive-grade Google XYZ metrics in seconds.</p>
+          <button onclick="copyText('ResumeRoast.AI is a privacy-first, client-side ATS diagnostic scanner that parses resumes locally with pdf.js, computes a 0-100 impact score, and rewrites passive bullets into executive-grade Google XYZ metrics in seconds.')" class="text-slate-400 hover:text-emerald-400 text-xs shrink-0 mt-0.5"><i class="fa-solid fa-copy"></i></button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Directory Submission Grid -->
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
+      
+        <div class="bg-slate-900/80 border border-slate-800 hover:border-slate-700 p-4 rounded-2xl flex justify-between items-center gap-3 transition">
+          <div class="space-y-1">
+            <div class="flex items-center gap-2">
+              <h3 class="text-sm font-bold text-white">Product Hunt</h3>
+              <span class="text-[10px] px-2 py-0.5 rounded bg-slate-800 text-slate-400">Top Tier Launch</span>
+              <span class="text-[10px] px-2 py-0.5 rounded bg-emerald-500/10 text-emerald-400 font-mono">DOFOLLOW</span>
+            </div>
+            <p class="text-[11px] text-slate-400">High (5,000+ views)</p>
+          </div>
+          <button onclick="submitDirectory('https://www.producthunt.com/posts/new')" class="px-3.5 py-1.5 bg-indigo-600 hover:bg-indigo-500 text-white font-bold text-xs rounded-xl shadow-lg shadow-indigo-600/20 transition flex items-center gap-1.5 shrink-0">
+            <span>Open & Submit</span>
+            <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
+          </button>
+        </div>
+      
+        <div class="bg-slate-900/80 border border-slate-800 hover:border-slate-700 p-4 rounded-2xl flex justify-between items-center gap-3 transition">
+          <div class="space-y-1">
+            <div class="flex items-center gap-2">
+              <h3 class="text-sm font-bold text-white">Toolify.ai</h3>
+              <span class="text-[10px] px-2 py-0.5 rounded bg-slate-800 text-slate-400">AI Directory (Top 1)</span>
+              <span class="text-[10px] px-2 py-0.5 rounded bg-emerald-500/10 text-emerald-400 font-mono">DOFOLLOW</span>
+            </div>
+            <p class="text-[11px] text-slate-400">High (2.4M monthly visits)</p>
+          </div>
+          <button onclick="submitDirectory('https://www.toolify.ai/submit')" class="px-3.5 py-1.5 bg-indigo-600 hover:bg-indigo-500 text-white font-bold text-xs rounded-xl shadow-lg shadow-indigo-600/20 transition flex items-center gap-1.5 shrink-0">
+            <span>Open & Submit</span>
+            <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
+          </button>
+        </div>
+      
+        <div class="bg-slate-900/80 border border-slate-800 hover:border-slate-700 p-4 rounded-2xl flex justify-between items-center gap-3 transition">
+          <div class="space-y-1">
+            <div class="flex items-center gap-2">
+              <h3 class="text-sm font-bold text-white">Futurepedia</h3>
+              <span class="text-[10px] px-2 py-0.5 rounded bg-slate-800 text-slate-400">AI Aggregator</span>
+              <span class="text-[10px] px-2 py-0.5 rounded bg-emerald-500/10 text-emerald-400 font-mono">DOFOLLOW</span>
+            </div>
+            <p class="text-[11px] text-slate-400">High (1.8M monthly visits)</p>
+          </div>
+          <button onclick="submitDirectory('https://www.futurepedia.io/submit-tool')" class="px-3.5 py-1.5 bg-indigo-600 hover:bg-indigo-500 text-white font-bold text-xs rounded-xl shadow-lg shadow-indigo-600/20 transition flex items-center gap-1.5 shrink-0">
+            <span>Open & Submit</span>
+            <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
+          </button>
+        </div>
+      
+        <div class="bg-slate-900/80 border border-slate-800 hover:border-slate-700 p-4 rounded-2xl flex justify-between items-center gap-3 transition">
+          <div class="space-y-1">
+            <div class="flex items-center gap-2">
+              <h3 class="text-sm font-bold text-white">There's An AI For That (TAAFT)</h3>
+              <span class="text-[10px] px-2 py-0.5 rounded bg-slate-800 text-slate-400">AI Search Engine</span>
+              <span class="text-[10px] px-2 py-0.5 rounded bg-emerald-500/10 text-emerald-400 font-mono">DOFOLLOW</span>
+            </div>
+            <p class="text-[11px] text-slate-400">Very High (3.1M monthly visits)</p>
+          </div>
+          <button onclick="submitDirectory('https://theresanaiforthat.com/submit/')" class="px-3.5 py-1.5 bg-indigo-600 hover:bg-indigo-500 text-white font-bold text-xs rounded-xl shadow-lg shadow-indigo-600/20 transition flex items-center gap-1.5 shrink-0">
+            <span>Open & Submit</span>
+            <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
+          </button>
+        </div>
+      
+        <div class="bg-slate-900/80 border border-slate-800 hover:border-slate-700 p-4 rounded-2xl flex justify-between items-center gap-3 transition">
+          <div class="space-y-1">
+            <div class="flex items-center gap-2">
+              <h3 class="text-sm font-bold text-white">Microlaunch</h3>
+              <span class="text-[10px] px-2 py-0.5 rounded bg-slate-800 text-slate-400">Micro-SaaS Hub</span>
+              <span class="text-[10px] px-2 py-0.5 rounded bg-emerald-500/10 text-emerald-400 font-mono">DOFOLLOW</span>
+            </div>
+            <p class="text-[11px] text-slate-400">Medium (Indie Buyers)</p>
+          </div>
+          <button onclick="submitDirectory('https://microlaunch.net/submit')" class="px-3.5 py-1.5 bg-indigo-600 hover:bg-indigo-500 text-white font-bold text-xs rounded-xl shadow-lg shadow-indigo-600/20 transition flex items-center gap-1.5 shrink-0">
+            <span>Open & Submit</span>
+            <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
+          </button>
+        </div>
+      
+        <div class="bg-slate-900/80 border border-slate-800 hover:border-slate-700 p-4 rounded-2xl flex justify-between items-center gap-3 transition">
+          <div class="space-y-1">
+            <div class="flex items-center gap-2">
+              <h3 class="text-sm font-bold text-white">TopAI.tools</h3>
+              <span class="text-[10px] px-2 py-0.5 rounded bg-slate-800 text-slate-400">AI Directory</span>
+              <span class="text-[10px] px-2 py-0.5 rounded bg-emerald-500/10 text-emerald-400 font-mono">DOFOLLOW</span>
+            </div>
+            <p class="text-[11px] text-slate-400">Medium (500k monthly visits)</p>
+          </div>
+          <button onclick="submitDirectory('https://topai.tools/submit')" class="px-3.5 py-1.5 bg-indigo-600 hover:bg-indigo-500 text-white font-bold text-xs rounded-xl shadow-lg shadow-indigo-600/20 transition flex items-center gap-1.5 shrink-0">
+            <span>Open & Submit</span>
+            <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
+          </button>
+        </div>
+      
+        <div class="bg-slate-900/80 border border-slate-800 hover:border-slate-700 p-4 rounded-2xl flex justify-between items-center gap-3 transition">
+          <div class="space-y-1">
+            <div class="flex items-center gap-2">
+              <h3 class="text-sm font-bold text-white">AlternativeTo</h3>
+              <span class="text-[10px] px-2 py-0.5 rounded bg-slate-800 text-slate-400">Software Alternatives</span>
+              <span class="text-[10px] px-2 py-0.5 rounded bg-emerald-500/10 text-emerald-400 font-mono">DOFOLLOW</span>
+            </div>
+            <p class="text-[11px] text-slate-400">Very High (High Intent)</p>
+          </div>
+          <button onclick="submitDirectory('https://alternativeto.net/software/add/')" class="px-3.5 py-1.5 bg-indigo-600 hover:bg-indigo-500 text-white font-bold text-xs rounded-xl shadow-lg shadow-indigo-600/20 transition flex items-center gap-1.5 shrink-0">
+            <span>Open & Submit</span>
+            <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
+          </button>
+        </div>
+      
+        <div class="bg-slate-900/80 border border-slate-800 hover:border-slate-700 p-4 rounded-2xl flex justify-between items-center gap-3 transition">
+          <div class="space-y-1">
+            <div class="flex items-center gap-2">
+              <h3 class="text-sm font-bold text-white">BetaList</h3>
+              <span class="text-[10px] px-2 py-0.5 rounded bg-slate-800 text-slate-400">Startup Discovery</span>
+              <span class="text-[10px] px-2 py-0.5 rounded bg-emerald-500/10 text-emerald-400 font-mono">DOFOLLOW</span>
+            </div>
+            <p class="text-[11px] text-slate-400">High (Early Adopters)</p>
+          </div>
+          <button onclick="submitDirectory('https://betalist.com/submit')" class="px-3.5 py-1.5 bg-indigo-600 hover:bg-indigo-500 text-white font-bold text-xs rounded-xl shadow-lg shadow-indigo-600/20 transition flex items-center gap-1.5 shrink-0">
+            <span>Open & Submit</span>
+            <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
+          </button>
+        </div>
+      
+        <div class="bg-slate-900/80 border border-slate-800 hover:border-slate-700 p-4 rounded-2xl flex justify-between items-center gap-3 transition">
+          <div class="space-y-1">
+            <div class="flex items-center gap-2">
+              <h3 class="text-sm font-bold text-white">Dang.ai</h3>
+              <span class="text-[10px] px-2 py-0.5 rounded bg-slate-800 text-slate-400">AI Tools Index</span>
+              <span class="text-[10px] px-2 py-0.5 rounded bg-emerald-500/10 text-emerald-400 font-mono">DOFOLLOW</span>
+            </div>
+            <p class="text-[11px] text-slate-400">Medium (300k visits)</p>
+          </div>
+          <button onclick="submitDirectory('https://dang.ai/submit')" class="px-3.5 py-1.5 bg-indigo-600 hover:bg-indigo-500 text-white font-bold text-xs rounded-xl shadow-lg shadow-indigo-600/20 transition flex items-center gap-1.5 shrink-0">
+            <span>Open & Submit</span>
+            <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
+          </button>
+        </div>
+      
+        <div class="bg-slate-900/80 border border-slate-800 hover:border-slate-700 p-4 rounded-2xl flex justify-between items-center gap-3 transition">
+          <div class="space-y-1">
+            <div class="flex items-center gap-2">
+              <h3 class="text-sm font-bold text-white">Insidr.ai</h3>
+              <span class="text-[10px] px-2 py-0.5 rounded bg-slate-800 text-slate-400">AI Reviews & Tools</span>
+              <span class="text-[10px] px-2 py-0.5 rounded bg-emerald-500/10 text-emerald-400 font-mono">DOFOLLOW</span>
+            </div>
+            <p class="text-[11px] text-slate-400">Medium (SEO Backlinks)</p>
+          </div>
+          <button onclick="submitDirectory('https://www.insidr.ai/submit-your-tool/')" class="px-3.5 py-1.5 bg-indigo-600 hover:bg-indigo-500 text-white font-bold text-xs rounded-xl shadow-lg shadow-indigo-600/20 transition flex items-center gap-1.5 shrink-0">
+            <span>Open & Submit</span>
+            <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
+          </button>
+        </div>
+      
+        <div class="bg-slate-900/80 border border-slate-800 hover:border-slate-700 p-4 rounded-2xl flex justify-between items-center gap-3 transition">
+          <div class="space-y-1">
+            <div class="flex items-center gap-2">
+              <h3 class="text-sm font-bold text-white">StartupStash</h3>
+              <span class="text-[10px] px-2 py-0.5 rounded bg-slate-800 text-slate-400">SaaS Directory</span>
+              <span class="text-[10px] px-2 py-0.5 rounded bg-emerald-500/10 text-emerald-400 font-mono">DOFOLLOW</span>
+            </div>
+            <p class="text-[11px] text-slate-400">Medium (Founders & Tech)</p>
+          </div>
+          <button onclick="submitDirectory('https://startupstash.com/submit/')" class="px-3.5 py-1.5 bg-indigo-600 hover:bg-indigo-500 text-white font-bold text-xs rounded-xl shadow-lg shadow-indigo-600/20 transition flex items-center gap-1.5 shrink-0">
+            <span>Open & Submit</span>
+            <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
+          </button>
+        </div>
+      
+        <div class="bg-slate-900/80 border border-slate-800 hover:border-slate-700 p-4 rounded-2xl flex justify-between items-center gap-3 transition">
+          <div class="space-y-1">
+            <div class="flex items-center gap-2">
+              <h3 class="text-sm font-bold text-white">Launching Next</h3>
+              <span class="text-[10px] px-2 py-0.5 rounded bg-slate-800 text-slate-400">Trending Startups</span>
+              <span class="text-[10px] px-2 py-0.5 rounded bg-emerald-500/10 text-emerald-400 font-mono">DOFOLLOW</span>
+            </div>
+            <p class="text-[11px] text-slate-400">Medium (150k visits)</p>
+          </div>
+          <button onclick="submitDirectory('https://www.launchingnext.com/submit/')" class="px-3.5 py-1.5 bg-indigo-600 hover:bg-indigo-500 text-white font-bold text-xs rounded-xl shadow-lg shadow-indigo-600/20 transition flex items-center gap-1.5 shrink-0">
+            <span>Open & Submit</span>
+            <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
+          </button>
+        </div>
+      
+    </div>
+  </div>
+
+  <script>
+    const pack = {"product_name": "ResumeRoast.AI", "website_url": "https://resume-roast-ai-xi.vercel.app", "pricing_model": "Freemium / Pay-Per-Unlock ($4.99)", "tagline": "Beat ATS filters and 10x interview callbacks with instant AI resume roasting", "short_description": "ResumeRoast.AI is a privacy-first, client-side ATS diagnostic scanner that parses resumes locally with pdf.js, computes a 0-100 impact score, and rewrites passive bullets into executive-grade Google XYZ metrics in seconds.", "key_features": ["Instant in-browser PDF/DOCX parsing (zero server latency)", "Brutal 0-100 ATS scoring across impact, brevity, and keyword depth", "Google XYZ bullet rewriter transforming passive verbs into quantified wins", "Programmatic SEO funnels tailored for Software Engineers, PMs, and Data Analysts", "Frictionless checkout supporting Apple Pay, Google Pay, Cards, TRC20 USDT, and TON"], "tags": ["AI", "Career", "Resume", "Job Search", "Productivity", "SaaS", "ATS Scanner"], "founder_telegram": "@jasurshukurov", "contact_email": "jasur@resumeroast.ai"};
+
+    function copyText(txt) {
+      navigator.clipboard.writeText(txt);
+      alert('Copied to clipboard!');
+    }
+
+    function copyAllMetadata() {
+      const text = `Product Name: ${pack.product_name}\nURL: ${pack.website_url}\nTagline: ${pack.tagline}\n\nDescription:\n${pack.short_description}\n\nPricing: ${pack.pricing_model}\nTags: ${pack.tags.join(', ')}`;
+      navigator.clipboard.writeText(text);
+      alert('✅ Complete Directory Submission Pack copied to clipboard!');
+    }
+
+    function submitDirectory(url) {
+      copyAllMetadata();
+      window.open(url, '_blank');
+    }
+  </script>
+</body>
+</html>
