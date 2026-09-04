@@ -2,10 +2,17 @@
   "cleanUrls": true,
   "rewrites": [
     { "source": "/owner", "destination": "/owner_dashboard.html" },
+    { "source": "/directories", "destination": "/directory_launcher.html" },
+    { "source": "/directory-hub", "destination": "/directory_launcher.html" },
     { "source": "/software-engineer", "destination": "/roles/software-engineer.html" },
     { "source": "/product-manager", "destination": "/roles/product-manager.html" },
     { "source": "/data-scientist", "destination": "/roles/data-scientist.html" },
     { "source": "/devops-cloud-architect", "destination": "/roles/devops-cloud-architect.html" },
+    { "source": "/cybersecurity-analyst", "destination": "/roles/cybersecurity-analyst.html" },
+    { "source": "/blockchain-web3-developer", "destination": "/roles/blockchain-web3-developer.html" },
+    { "source": "/machine-learning-engineer", "destination": "/roles/machine-learning-engineer.html" },
+    { "source": "/fullstack-react-developer", "destination": "/roles/fullstack-react-developer.html" },
+    { "source": "/roles/:path*", "destination": "/roles/:path*.html" },
     { "source": "/", "destination": "/index.html" }
   ]
 }
