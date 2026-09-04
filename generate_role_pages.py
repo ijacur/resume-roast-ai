@@ -141,6 +141,96 @@ ROLE_DATA = [
             "- Assisted with database migrations and Prisma schema updates.\n"
             "- Attended daily agile standups and completed Jira tickets."
         )
+    },
+    {
+        "slug": "financial-analyst",
+        "title": "Financial Analyst & Investment Banking Resume Roast | ATS Scanner",
+        "h1": "Finance Resumes Fail Without Quantified P&L and Modeling Precision.",
+        "sub": "Goldman Sachs, Morgan Stanley, and corporate finance ATS filter out 82% of analyst CVs lacking DCF modeling, variance analysis, and ROI metrics.",
+        "target_role": "Senior Financial Analyst / Corporate Finance",
+        "keywords": ["DCF Modeling", "Variance Analysis", "EBITDA Growth", "CapEx Forecasting", "SQL / Tableau", "3-Statement Models", "M&A Diligence"],
+        "sample_cv": (
+            "Financial Analyst at Capital Corp (2022-2025)\n"
+            "- Responsible for monthly financial reporting and budget updates.\n"
+            "- Helped senior associates build quarterly Excel spreadsheets.\n"
+            "- Analyzed financial variance and attended executive meetings.\n"
+            "- Prepared PowerPoint slides for board presentations."
+        )
+    },
+    {
+        "slug": "ui-ux-designer",
+        "title": "UI/UX Product Designer Resume Roast | Beat Design ATS Filters",
+        "h1": "Design Resumes Show Dribbble Visuals Instead of Conversion Impact.",
+        "sub": "Design directors skip portfolios that do not prove design system governance, user research retention lifts, and accessibility standards.",
+        "target_role": "Senior UI/UX Product Designer",
+        "keywords": ["Design Systems", "WCAG 2.2 AA", "User Research", "Figma Auto-Layout", "Conversion Uplift", "Prototyping", "Information Architecture"],
+        "sample_cv": (
+            "Product Designer at CreativeStudio (2022-2025)\n"
+            "- Responsible for creating Figma mockups and wireframes.\n"
+            "- Collaborated with developers to implement UI designs.\n"
+            "- Worked on user research interviews and usability testing.\n"
+            "- Designed marketing graphics and social media assets."
+        )
+    },
+    {
+        "slug": "registered-nurse",
+        "title": "Registered Nurse (RN) & Healthcare Resume Roast | Hospital ATS Scanner",
+        "h1": "Hospital ATS Rejects Clinical CVs Lacking Critical Care Certifications.",
+        "sub": "Healthcare recruitment algorithms automatically reject nursing resumes missing BLS/ACLS protocols, patient load ratios, and EHR compliance.",
+        "target_role": "Registered Nurse (RN) - Acute & Critical Care",
+        "keywords": ["Patient Load 1:4", "BLS / ACLS Certified", "Epic / Cerner EHR", "Triage Assessment", "Medication Administration", "Infection Control"],
+        "sample_cv": (
+            "Registered Nurse at Metro Health (2022-2025)\n"
+            "- Responsible for patient bedside care and vital sign monitoring.\n"
+            "- Administered medications and updated patient charts in Epic.\n"
+            "- Communicated with physicians regarding treatment plans.\n"
+            "- Assisted patients with daily recovery activities."
+        )
+    },
+    {
+        "slug": "digital-marketing-growth",
+        "title": "Growth Marketer & Performance Ads Resume Roast | Beat ATS Filters",
+        "h1": "Marketer Resumes List 'Brand Awareness' Instead of Proven CAC/ROAS.",
+        "sub": "CMOs and recruitment ATS algorithms filter out digital marketers who fail to quantify customer acquisition costs, blended ROAS, and pipeline ARR.",
+        "target_role": "Head of Growth / Performance Marketing Specialist",
+        "keywords": ["Blended CAC", "ROAS > 3.8x", "Paid Search & Social", "Google Analytics 4", "Cohort Retention", "HubSpot Automation", "Conversion Rate (CRO)"],
+        "sample_cv": (
+            "Digital Marketing Specialist at ScaleMedia (2022-2025)\n"
+            "- Responsible for managing Meta and Google Ads ad spend.\n"
+            "- Helped write ad copy and test marketing creative.\n"
+            "- Analyzed campaign performance metrics in Google Analytics.\n"
+            "- Organized email newsletters and social media posting."
+        )
+    },
+    {
+        "slug": "project-manager-scrum",
+        "title": "Agile Scrum Master & Technical PM Resume Roast | ATS Scanner",
+        "h1": "PM Resumes List 'Daily Standups' Instead of On-Time Delivery Velocity.",
+        "sub": "Enterprise tech ATS filters reject project managers who document ceremony meetings without demonstrating sprint velocity increases and risk mitigation.",
+        "target_role": "Senior Technical Project Manager / Scrum Master",
+        "keywords": ["Sprint Velocity +35%", "CSM / PMP", "Jira Architecture", "Scope Risk Mitigation", "Stakeholder Alignment", "Budget Compliance", "CI/CD Deployment"],
+        "sample_cv": (
+            "Project Manager at CloudSystems (2022-2025)\n"
+            "- Responsible for facilitating daily agile standups and sprint planning.\n"
+            "- Created Jira tickets and managed team task boards.\n"
+            "- Communicated project status updates to senior leadership.\n"
+            "- Helped team resolve blockers and coordinate releases."
+        )
+    },
+    {
+        "slug": "sales-account-executive",
+        "title": "Enterprise B2B Account Executive Resume Roast | Sales ATS Scanner",
+        "h1": "Sales Resumes List 'Pipeline Activities' Instead of Quota Attainment.",
+        "sub": "VPs of Sales instantly discard AE resumes that do not prominently state quota percentage attainment, average contract value (ACV), and win rates.",
+        "target_role": "Enterprise SaaS Account Executive (AE)",
+        "keywords": ["140% Quota Attainment", "$85k ACV", "MEDDPICC Qualification", "Salesforce CRM", "Outbound Pipeline", "Executive Multi-Threading", "Enterprise Closes"],
+        "sample_cv": (
+            "Account Executive at TechSaaS (2022-2025)\n"
+            "- Responsible for closing new business deals and demoing software.\n"
+            "- Managed sales opportunities in Salesforce CRM.\n"
+            "- Conducted discovery calls and negotiated pricing terms.\n"
+            "- Attended trade show events and followed up with inbound leads."
+        )
     }
 ]
 

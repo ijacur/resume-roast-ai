@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """
 🚀 Instant Search Engine Indexer (IndexNow Protocol)
-Submits all programmatic SEO URLs for ResumeRoast.AI to Bing, Yandex,
+Submits all 14 programmatic SEO URLs for ResumeRoast.AI to Bing, Yandex,
 and global search engines for immediate crawling & organic customer discovery.
 """
 
@@ -13,18 +13,28 @@ KEY = "a4b7f9c2d1e0854372910fbcad7823e1"
 HOST = "resume-roast-ai-xi.vercel.app"
 KEY_LOCATION = f"https://{HOST}/{KEY}.txt"
 
+ROLES = [
+    "software-engineer",
+    "product-manager",
+    "data-scientist",
+    "devops-cloud-architect",
+    "cybersecurity-analyst",
+    "blockchain-web3-developer",
+    "machine-learning-engineer",
+    "fullstack-react-developer",
+    "financial-analyst",
+    "ui-ux-designer",
+    "registered-nurse",
+    "digital-marketing-growth",
+    "project-manager-scrum",
+    "sales-account-executive"
+]
+
 URL_LIST = [
     f"https://{HOST}/",
     f"https://{HOST}/owner",
-    f"https://{HOST}/roles/software-engineer.html",
-    f"https://{HOST}/roles/product-manager.html",
-    f"https://{HOST}/roles/data-scientist.html",
-    f"https://{HOST}/roles/devops-cloud-architect.html",
-    f"https://{HOST}/roles/cybersecurity-analyst.html",
-    f"https://{HOST}/roles/blockchain-web3-developer.html",
-    f"https://{HOST}/roles/machine-learning-engineer.html",
-    f"https://{HOST}/roles/fullstack-react-developer.html"
-]
+    f"https://{HOST}/directories"
+] + [f"https://{HOST}/roles/{r}.html" for r in ROLES]
 
 payload = {
     "host": HOST,
@@ -53,7 +63,7 @@ def submit_indexnow():
                 method="POST"
             )
             with urllib.request.urlopen(req, context=ctx, timeout=10) as resp:
-                print(f"✅ [{ep}] Status: {resp.status} (URLs successfully submitted for indexing)")
+                print(f"✅ [{ep}] Status: {resp.status} (17 URLs successfully submitted for indexing)")
         except urllib.error.HTTPError as e:
             print(f"⚠️ [{ep}] HTTP {e.code}: {e.read().decode('utf-8', errors='ignore')}")
         except Exception as e:
