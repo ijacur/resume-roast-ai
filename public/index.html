@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>ResumeRoast AI | Beat ATS Scanners & 10x Interview Callbacks</title>
   <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
   <style>
@@ -68,8 +69,20 @@
         </button>
       </div>
 
+      <!-- Drag & Drop / File Upload Zone -->
+      <div id="dropZone" onclick="document.getElementById('fileUploadInput').click()" ondragover="event.preventDefault(); this.classList.add('border-rose-500')" ondragleave="this.classList.remove('border-rose-500')" ondrop="handleFileDrop(event)" class="border-2 border-dashed border-slate-700 hover:border-rose-500/80 bg-slate-900/40 hover:bg-slate-900/70 rounded-2xl p-4 text-center cursor-pointer transition flex flex-col items-center justify-center gap-1.5 group">
+        <input type="file" id="fileUploadInput" accept=".pdf,.txt,.md" class="hidden" onchange="handleFileSelect(event)">
+        <div class="w-9 h-9 rounded-xl bg-slate-800 text-rose-400 group-hover:scale-110 transition flex items-center justify-center text-base shadow">
+          <i class="fa-solid fa-cloud-arrow-up"></i>
+        </div>
+        <div id="dropZoneText" class="text-xs font-bold text-white">
+          Drop your PDF or Text Resume here <span class="text-slate-400 font-normal">or click to browse</span>
+        </div>
+        <div class="text-[10px] text-slate-500 font-mono">Accepts .PDF, .TXT, .MD • Private in-browser instant extraction</div>
+      </div>
+
       <div>
-        <label class="text-xs font-bold uppercase text-slate-400 tracking-wider">2. Paste Your Resume / CV Text</label>
+        <label class="text-xs font-bold uppercase text-slate-400 tracking-wider">2. Or Paste Your Resume / CV Text</label>
         <textarea id="resumeInput" rows="7" placeholder="Paste your work experience bullets or full CV text here..." class="mt-2 w-full bg-slate-900/90 border border-slate-700/80 p-4 rounded-2xl text-xs text-slate-200 focus:outline-none focus:border-rose-500 transition leading-relaxed mono-font custom-scroll"></textarea>
       </div>
 
@@ -329,6 +342,61 @@ Backend Developer at TechSolutions (2022 - Present)
 - Helped the engineering team deploy new product features to AWS.
 - Assisted with writing automated unit tests and documenting code.
 - Handled customer support tickets related to system crashes.`;
+
+    if (window.pdfjsLib) {
+      pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js';
+    }
+
+    async function handleFileDrop(e) {
+      e.preventDefault();
+      document.getElementById('dropZone').classList.remove('border-rose-500');
+      if (e.dataTransfer.files && e.dataTransfer.files.length > 0) {
+        processResumeFile(e.dataTransfer.files[0]);
+      }
+    }
+
+    function handleFileSelect(e) {
+      if (e.target.files && e.target.files.length > 0) {
+        processResumeFile(e.target.files[0]);
+      }
+    }
+
+    async function processResumeFile(file) {
+      const dropText = document.getElementById('dropZoneText');
+      if (dropText) dropText.innerText = `Parsing ${file.name}...`;
+
+      if (file.type === 'application/pdf' || file.name.endsWith('.pdf')) {
+        const reader = new FileReader();
+        reader.onload = async function() {
+          try {
+            const typedarray = new Uint8Array(this.result);
+            const pdf = await pdfjsLib.getDocument(typedarray).promise;
+            let fullText = '';
+            for (let i = 1; i <= pdf.numPages; i++) {
+              const page = await pdf.getPage(i);
+              const textContent = await page.getTextContent();
+              const pageText = textContent.items.map(item => item.str).join(' ');
+              fullText += pageText + '\n';
+            }
+            document.getElementById('resumeInput').value = fullText.trim();
+            if (dropText) dropText.innerText = `✅ Parsed ${file.name}`;
+            analyzeResume();
+          } catch(err) {
+            alert('Could not parse PDF: ' + err.message);
+            if (dropText) dropText.innerText = `Drop your PDF or Text Resume here`;
+          }
+        };
+        reader.readAsArrayBuffer(file);
+      } else {
+        const reader = new FileReader();
+        reader.onload = function(e) {
+          document.getElementById('resumeInput').value = e.target.result;
+          if (dropText) dropText.innerText = `✅ Loaded ${file.name}`;
+          analyzeResume();
+        };
+        reader.readAsText(file);
+      }
+    }
 
     function fillSampleResume() {
       document.getElementById('targetRole').value = 'Senior Backend Engineer';
